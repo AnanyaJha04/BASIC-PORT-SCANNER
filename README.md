@@ -33,6 +33,26 @@ Limitations-
 Ethical Considerations-
 "This script is intended for educational purposes and for scanning systems that you have explicit permission to test. Scanning networks or systems without authorization is illegal and unethical. The author is not responsible for any misuse of this tool."
 
+Additionally-
+In this Project, we can additionally add a UDP Scanner to increase the range of Ports that can be scanned.
+# UDP SCANNING
+The current code only scans TCP ports. Adding the ability to scan UDP ports would demonstrate a broader understanding of network protocols. UDP scanning is more challenging as it's connectionless, and you often rely on receiving specific responses (or lack thereof) to infer if a port is open.
 
+Characteristics-
+1. No Handshake: UDP doesn't involve a three-way handshake (SYN, SYN-ACK, ACK) to establish a connection.
+2. Response Optional: A UDP server is not required to send a response to a received packet.
+3. Ambiguous Results: A lack of response could mean the port is closed, filtered, or simply that the service doesn't reply to empty packets.
+
+Limitations-
+1. Reliability: The absence of a response is ambiguous. It's hard to differentiate between a closed port and a filtered port.
+2. Firewalls: UDP traffic is often blocked by firewalls, making scanning less effective.
+3. Rate Limiting: Sending too many UDP packets can trigger rate limiting or other security mechanisms.
+4. ICMP Dependence: Relying on ICMP "Port Unreachable" messages is not ideal, as they are not always generated.
+5. Service Variability: Many UDP services do not provide a standard response to an empty UDP packet.
+
+Ethical Considerations-
+"This script is intended for educational purposes and for scanning systems that you have explicit permission to test. Scanning networks or systems without authorization is illegal and unethical. The author is not responsible for any misuse of this tool."
+
+   
 
 
